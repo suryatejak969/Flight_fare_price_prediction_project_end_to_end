@@ -7,16 +7,6 @@ app = Flask(__name__)
 model = joblib.load('flight_price81.pkl')
 le_totalStops = joblib.load('le_totalStops.pkl')
 
-output = model.predict([[1, 13, 10, 20, 10,
-       23, 30, 3, 20,
-       1, 0, 0, 0, 0,
-       0, 0, 0,
-       0, 0, 0, 0, 1,
-       0, 1, 0, 0, 0, 0,
-       0]])
-
-print(output[0])
-
 @app.route('/')
 def first():
     return render_template('home.html')
@@ -184,7 +174,7 @@ def predict():
         Trujet = 0
         Vistara = 0
         Vistara_Premium_economy = 0
-    
+
     Source = request.form["Source"]
     if Source == 'Delhi':
         s_Delhi = 1
@@ -249,7 +239,7 @@ def predict():
         d_New_Delhi = 0
         d_Hyderabad = 0
         d_Kolkata = 0
-    
+
     print(Total_stops, Journey_day, Journey_month, Dep_hour, Dep_min,
        Arrival_hour, Arrival_min, dur_hour, dur_min,
        Air_India, GoAir, IndiGo, Jet_Airways, Jet_Airways_Business,
@@ -265,7 +255,7 @@ def predict():
        Trujet, Vistara, Vistara_Premium_economy, s_Chennai, s_Delhi,
        s_Kolkata, s_Mumbai, d_Cochin, d_Delhi, d_Hyderabad, d_Kolkata,
        d_New_Delhi]])
-    
+
     output=round(prediction[0],2)
 
     return render_template('home.html',prediction_text="Your Flight price is Rs. {}".format(output))
