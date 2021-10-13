@@ -6,13 +6,16 @@
     <body>
 
         <form action='/predict' method="post">
-            
+
             <div>
+                <label for="Dep_Time">Dep_Time:</label>
                 <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required"/>
+                <label for="Arr_Time">Arr_Time:</label>
                 <input type="datetime-local" name="Arr_Time" id="Arr_Time" required="required">
             </div>
 
             <div>
+                <label for="Source">Source:</label>
                 <select id="Source" name="Source">
                     <option value="Delhi">Delhi</option>
                     <option value="Kolkata">Kolkata</option>
@@ -20,6 +23,7 @@
                     <option value="Mumbai">Mumbai</option>
                     <option value="Chennai">DeChennailhi</option>
                 </select>
+                <label for="Destination">Destination:</label>
                 <select id="Destination" name="Destination">
                     <option value="Cochin">Cochin</option>
                     <option value="Banglore">Banglore</option>
@@ -31,6 +35,7 @@
             </div>
 
             <div>
+                <label for="Stopage">Stopage:</label>
                 <select id="Stopage" name="Stopage">
                     <option value="non-stop">non-stop</option>
                     <option value="1 stop">1 stop</option>
@@ -38,6 +43,7 @@
                     <option value="3 stops">3 stops</option>
                     <option value="4 stops">4 stops</option>
                 </select>
+                <label for="Airline">Airline:</label>
                 <select id="Airline" name="Airline">
                     <option value="Jet Airways">Jet Airways</option>
                     <option value="IndiGo">IndiGo</option>
@@ -53,9 +59,9 @@
                     <option value="Trujet">Trujet</option>
                 </select>
             </div>
-            
+
             <div>
-                <button type="submit">Predict</button>
+                <button type="submit">Submit</button>
             </div>
 
         </form>
