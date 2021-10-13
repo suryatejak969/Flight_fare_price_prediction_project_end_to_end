@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Flight Price Prediction</title>
+    </head>
+
+    <body>
+
+        <form action='/predict' method="post">
+            
+            <div>
+                <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required"/>
+                <input type="datetime-local" name="Arr_Time" id="Arr_Time" required="required">
+            </div>
+
+            <div>
+                <select id="Source" name="Source">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">DeChennailhi</option>
+                </select>
+                <select id="Destination" name="Destination">
+                    <option value="Cochin">Cochin</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+            </div>
+
+            <div>
+                <select id="Stopage" name="Stopage">
+                    <option value="non-stop">non-stop</option>
+                    <option value="1 stop">1 stop</option>
+                    <option value="2 stops">2 stops</option>
+                    <option value="3 stops">3 stops</option>
+                    <option value="4 stops">4 stops</option>
+                </select>
+                <select id="Airline" name="Airline">
+                    <option value="Jet Airways">Jet Airways</option>
+                    <option value="IndiGo">IndiGo</option>
+                    <option value="Air India">Air India</option>
+                    <option value="Multiple carriers">Multiple carriers</option>
+                    <option value="SpiceJet">SpiceJet</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="Air Asia">Air Asia</option>
+                    <option value="GoAir">GoAir</option>
+                    <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                    <option value="Jet Airways Business">Jet Airways Business</option>
+                    <option value="Vistara Premium economy">Vistara Premium economy</option>
+                    <option value="Trujet">Trujet</option>
+                </select>
+            </div>
+            
+            <div>
+                <button type="submit">Predict</button>
+            </div>
+
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+
+    </body>
+</html>
