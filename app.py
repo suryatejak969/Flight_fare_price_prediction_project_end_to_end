@@ -240,14 +240,6 @@ def predict():
         d_Hyderabad = 0
         d_Kolkata = 0
 
-    print(Total_stops, Journey_day, Journey_month, Dep_hour, Dep_min,
-       Arrival_hour, Arrival_min, dur_hour, dur_min,
-       Air_India, GoAir, IndiGo, Jet_Airways, Jet_Airways_Business,
-       Multiple_carriers, Multiple_carriers_Premium_economy, SpiceJet,
-       Trujet, Vistara, Vistara_Premium_economy, s_Chennai, s_Delhi,
-       s_Kolkata, s_Mumbai, d_Cochin, d_Delhi, d_Hyderabad, d_Kolkata,
-       d_New_Delhi)
-
     prediction = model.predict([[Total_stops, Journey_day, Journey_month, Dep_hour, Dep_min,
        Arrival_hour, Arrival_min, dur_hour, dur_min,
        Air_India, GoAir, IndiGo, Jet_Airways, Jet_Airways_Business,
@@ -262,8 +254,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug = True)
-
-#'Air India', 'GoAir', 'IndiGo', 'Jet Airways',
-    #    'Jet Airways Business', 'Multiple carriers',
-    #    'Multiple carriers Premium economy', 'SpiceJet', 'Trujet', 'Vistara',
-    #    'Vistara Premium economy'
