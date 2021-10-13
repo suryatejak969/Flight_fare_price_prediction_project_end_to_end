@@ -174,7 +174,7 @@ def predict():
         Trujet = 0
         Vistara = 0
         Vistara_Premium_economy = 0
-
+    
     Source = request.form["Source"]
     if Source == 'Delhi':
         s_Delhi = 1
@@ -247,7 +247,7 @@ def predict():
        Trujet, Vistara, Vistara_Premium_economy, s_Chennai, s_Delhi,
        s_Kolkata, s_Mumbai, d_Cochin, d_Delhi, d_Hyderabad, d_Kolkata,
        d_New_Delhi]])
-
+    
     output=round(prediction[0],2)
 
     return render_template('home.html',prediction_text="Your Flight price is Rs. {}".format(output))
